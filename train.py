@@ -58,8 +58,8 @@ def get_command_line_parser():
     parser.add_argument('-q_dim', type=int, default=4, help='the dimensions of self-attention q and k')
     parser.add_argument('-v_dim', type=int, default=2, help='the dimensions of self-attention v')
     parser.add_argument('-token_dim', type=int, default=2, help='dimension of each token of self-attention')
-    parser.add_argument('-alpha', type=float, default=0.8, help='多模态特征融合超参（阿尔法）')
-    parser.add_argument('-beta', type=float, default=0.2, help='L2损失重要性（贝塔）')
+    parser.add_argument('-alpha', type=float, default=0.8, help='parameter for fusing text')
+    parser.add_argument('-beta', type=float, default=0.2, help='the importance of L_2')
     parser.add_argument('-moco_t', default=0.07, type=float, help='softmax temperature (default: 0.07)')
     parser.add_argument('-moco_dim', default=128, type=int, help='feature dimension (default: 128)')
 
