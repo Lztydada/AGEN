@@ -137,11 +137,11 @@ class CIFAR10(VisionDataset):
         self._load_meta()
 
     def SelectfromDefault(self, data, targets, index):
-        data_tmp = []
-        targets_tmp = []
+        data_tmp = None
+        targets_tmp = None
         for i in index:
             ind_cl = np.where(i == targets)[0]
-            if data_tmp == []:
+            if data_tmp is None:
                 data_tmp = data[ind_cl]
                 targets_tmp = targets[ind_cl]
             else:
@@ -150,15 +150,16 @@ class CIFAR10(VisionDataset):
 
         return data_tmp, targets_tmp
 
+
     def NewClassSelector(self, data, targets, index):
-        data_tmp = []
-        targets_tmp = []
+        data_tmp = None
+        targets_tmp = None
         ind_list = [int(i) for i in index]
         ind_np = np.array(ind_list)
-        index = ind_np.reshape((5, 5))
+        index = ind_np.reshape((5,5))
         for i in index:
             ind_cl = i
-            if data_tmp == []:
+            if data_tmp is None:
                 data_tmp = data[ind_cl]
                 targets_tmp = targets[ind_cl]
             else:
